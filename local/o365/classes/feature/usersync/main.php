@@ -153,7 +153,7 @@ class main {
             $photoid = $record->photoid;
         }
         $result = false;
-        $apiclient = $this->construct_outlook_api(null, true);
+        $apiclient = $this->construct_outlook_api($muserid, true);
         $size = $apiclient->get_photo_metadata($user);
         $muser = $DB->get_record('user', array('id' => $muserid), 'id, picture', MUST_EXIST);
         // If there is no meta data, there is no photo.
